@@ -64,3 +64,19 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    
+dunglas_api:
+    title:           "Your API name"                    # Required, the title of the API.
+    description:     "The full description of your API" # Required, the description of the API.
+    cache:           false                              # The caching service to use. Set to "dunglas_api.mapping.cache.apc" to enable APC metadata caching.
+    enable_fos_user: false                              # Enable the FOSUserBundle integration.
+    collection:
+        filter_name:
+            order:   "order"                            # Keyword used for the order filter
+        order:       null                               # The default order of results. (supported by Doctrine: ASC and DESC)
+        pagination:
+            page_parameter_name:       page             # The name of the parameter handling the page number.
+            items_per_page:
+                number:                30               # The default number of items perm page in collections.
+                enable_client_request: false            # Allow the client to change the number of elements by page.
+                parameter_name:        itemsPerPage     # The name of the parameter to change the number of elements by page client side.
