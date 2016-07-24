@@ -26,15 +26,8 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
-        "symfony/phpunit-bridge": "~2.7",
-        "api-platform/schema-generator": "~1.0",
-        "behat/behat": "~3.0",
-        "behat/symfony2-extension": "~2.0",
-        "behat/mink": "~1.5",
-        "behat/mink-extension": "~2.0",
-        "behat/mink-browserkit-driver": "~1.1",
-        "behatch/contexts": "dev-master",
-        "hautelook/alice-bundle": "~0.2"    },
+        "symfony/phpunit-bridge": "~2.7"
+    },
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",

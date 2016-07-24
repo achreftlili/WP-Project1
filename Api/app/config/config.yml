@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@UserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -9,8 +10,9 @@ parameters:
     locale: en
 
 framework:
-    #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
+    translator: ~
+    #esi:             ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -64,7 +66,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-    
+
 dunglas_api:
     title:           "Your API name"                    # Required, the title of the API.
     description:     "The full description of your API" # Required, the description of the API.
@@ -80,3 +82,13 @@ dunglas_api:
                 number:                30               # The default number of items perm page in collections.
                 enable_client_request: false            # Allow the client to change the number of elements by page.
                 parameter_name:        itemsPerPage     # The name of the parameter to change the number of elements by page client side.
+# Nelmio API Doc
+nelmio_api_doc:
+    sandbox:
+        accept_type:        "application/json"
+        body_format:
+            formats:        [ "json" ]
+            default_format: "json"
+        request_format:
+            formats:
+                json:       "application/json"

@@ -6,5 +6,5 @@ parameters:
 services:
     resource.product:
         parent:    "api.resource"
-        arguments: [ AppBundle\Entity\Product ]
+        arguments: [ "AppBundle\\Entity\\Product" ]
         tags:      [ { name: "api.resource" } ]
