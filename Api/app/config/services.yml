@@ -8,3 +8,12 @@ services:
         parent:    "api.resource"
         arguments: [ "AppBundle\\Entity\\Product" ]
         tags:      [ { name: "api.resource" } ]
+    resource.user:
+        parent:    "api.resource"
+        arguments: [ "AppBundle\\UserBundle\\Entity\\User" ]
+        calls:
+            -      method:    "initNormalizationContext"
+                   arguments: [ { groups: [ "user_read" ] } ]
+            -      method:    "initDenormalizationContext"
+                   arguments: [ { groups: [ "user_write" ] } ]
+        tags:      [ { name: "api.resource" } ]

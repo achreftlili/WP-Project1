@@ -9,7 +9,7 @@ app:
 api:
     resource: "."
     type:     "api"
-    prefix:   "/api"
+    prefix:   "api"
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
