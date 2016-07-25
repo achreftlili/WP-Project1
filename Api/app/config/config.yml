@@ -92,3 +92,18 @@ nelmio_api_doc:
         request_format:
             formats:
                 json:       "application/json"
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\UserBundle\Entity\User
+
+fos_oauth_server:
+    db_driver: orm
+    client_class:        AppBundle\UserBundle\Entity\Client
+    access_token_class:  AppBundle\UserBundle\Entity\AccessToken
+    refresh_token_class: AppBundle\UserBundle\Entity\RefreshToken
+    auth_code_class:     AppBundle\UserBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
+        options:
+            supported_scopes: user
