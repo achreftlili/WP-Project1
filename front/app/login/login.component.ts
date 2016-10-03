@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Http , Response  } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { LoginService } from './login.service';
@@ -19,13 +18,13 @@ export class LoginComponent {
     event.preventDefault();
     this.loginService.login(username, password)
                      .subscribe(
-                      response => {
-                        localStorage.setItem('token', response.access_token);
-                        this.router.navigateByUrl('/home');
-                      },
-                      error => {
-                        alert(error);
-                      }
+                        response => {
+                          localStorage.setItem('token', response.access_token);
+                          this.router.navigateByUrl('/home');
+                        },
+                        error => {
+                          alert(error);
+                        }
                       );
  }
 }

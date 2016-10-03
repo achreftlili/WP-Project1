@@ -11,7 +11,6 @@ export class LoginService {
   constructor(public http: Http) {}
 
   login(username, password) : Observable<any> {
-    let query = '?grant_type=password&username='+username+'&password='+password+'&client_id='+this.clientId+'&client_secret='+this.clientSecret ;
     let params: URLSearchParams = new URLSearchParams();
      params.set('username', username );
      params.set('password', password );
